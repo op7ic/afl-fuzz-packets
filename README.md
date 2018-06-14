@@ -1,4 +1,4 @@
-This repository contains unique single packet dumps which were narrowed down with help of TSHARK and AFL corpus minimization tool. These files can be used as seed input for fuzzing various packet parsing programs (tshark/wireshark etc).
+This repository contains unique packet samples which were narrowed down with help of TSHARK and AFL corpus minimization tool. These files can be used as seed input for fuzzing various packet parsing programs (tshark/wireshark etc).
 
 The samples were gathered as follows:
 
@@ -45,7 +45,7 @@ https://github.com/automayt/ICS-pcap
 http://www.netresec.com/?page=PcapFiles
 ```
 
-# Stats - Wireshark SampleCaptures PCAPS (2302179 minimized to 2944 samples)
+# Stats - Wireshark SampleCaptures PCAPS (2302179 minimized to 2944 samples) - DONE!
 
 The following stats were observed from AFL's corpus minimization tool:
 
@@ -71,7 +71,7 @@ The following stats were observed from AFL's corpus minimization tool:
 
 ```
 
-# Stats - PacketLife dumps (11717 minimized to 447 samples)
+# Stats - PacketLife dumps (11717 minimized to 447 samples)  - DONE!
 
 The following stats were observed from AFL's corpus minimization tool:
 ```
@@ -95,18 +95,6 @@ The following stats were observed from AFL's corpus minimization tool:
 ```
 
 ```
-
-# Stats - Combined samples from all datasets 
-
-The following stats were observed from AFL's corpus minimization tool:
-
-```
-
-```
-
-
-
-
 
 
 
