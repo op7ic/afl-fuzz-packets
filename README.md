@@ -91,7 +91,7 @@ The following stats were observed from AFL's corpus minimization tool:
 
 # Stats - ICS-pcap dumps (3417184 minimized to XXXXXXXXX samples)
 
-The following stats were observed from AFL's corpus minimization tool:
+The following stats were observed from AFL's corpus minimization tool (split set to accommodate space requirements in sort process):
 ```
 
 ```
