@@ -10,10 +10,7 @@ wget --random-wait -e robots=off -nH -l 100000 -A pcap,cap,pcapng,cap.gz,pcap.gz
 2) Download packetlife samples
 wget --random-wait -e robots=off -nH -A pcap,cap,pcapng -l 100000 -r --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0" http://packetlife.net/captures/
 
-3) Download Australian Defence Force Academy (ADFA) UNSW-NB15 data set (100 GB) samples
-wget https://cloudstor.aarnet.edu.au/plus/s/2DhnLGDdEECo4ys/download
-
-4) Download ICS-pcap samples  
+3) Download ICS-pcap samples  
 https://github.com/automayt/ICS-pcap
 ```
 
@@ -32,27 +29,23 @@ for i in *; do editcap -c 1 $i split-input-clean/$(md5sum $f | cut -d " " -f 1);
 #Wireshark Packet Samples
 https://wiki.wireshark.org/SampleCaptures
 
-#Australian Defence Force Academy (ADFA) UNSW-NB15 data set (100 GB)
-https://cloudstor.aarnet.edu.au/plus/index.php/s/2DhnLGDdEECo4ys?path=%2FUNSW-NB15%20-%20pcap%20files
-
 #PacketLife
 http://packetlife.net/captures/
 
 #ICS-pcap repository (git lfs)
 https://github.com/automayt/ICS-pcap
-
-# More sets are available here if needed
-http://www.netresec.com/?page=PcapFiles
 ```
 
-# Stats - Wireshark SampleCaptures PCAPS (2302179 minimized to 2944 samples) - DONE!
+# Stats
+
+**Stats - Wireshark SampleCaptures PCAPS (2302179 packets minimized to 2944 samples)**
 
 The following stats were observed from AFL's corpus minimization tool:
 
 ```
 [*] Testing the target binary...
 [+] OK, 13588 tuples recorded.
-[*] Obtaining traces for input files in 'input-caps/'...
+[*] Obtaining traces for input files in '/opt/uniq-wireshark/'...
     Processing file 2302179/2302179...
 [*] Sorting trace sets (this may take a while)...
 [+] Found 85141 unique tuples across 2302179 files.
@@ -61,17 +54,10 @@ The following stats were observed from AFL's corpus minimization tool:
 [*] Sorting candidate list (be patient)...
 [*] Processing candidates and writing output files...
     Processing tuple 85141/85141...
-[+] Narrowed down to 2944 files, saved in 'split-input-clean/'.
+[+] Narrowed down to 2944 files, saved in 'split-input-clean-wireshark/'.
 ```
 
-# Stats - Australian Defence Force Academy (ADFA) UNSW-NB15 data set (AAAAAAAAAAA minimized to XXXXXXXXX samples)
-
-The following stats were observed from AFL's corpus minimization tool:
-```
-
-```
-
-# Stats - PacketLife dumps (11717 minimized to 447 samples)  - DONE!
+**Stats - PacketLife dumps (11714 packets minimized to 447 samples)**
 
 The following stats were observed from AFL's corpus minimization tool:
 ```
@@ -86,15 +72,18 @@ The following stats were observed from AFL's corpus minimization tool:
 [*] Sorting candidate list (be patient)...
 [*] Processing candidates and writing output files...
     Processing tuple 31850/31850...
-[+] Narrowed down to 447 files, saved in '../../../split-input3'.
+[+] Narrowed down to 447 files, saved in 'split-input-clean-packetlife/'.
 ```
 
-# Stats - ICS-pcap dumps (3417184 minimized to XXXXXXXXX samples)
+**Stats - ICS-pcap dumps (3417184 packets minimized to 1760 samples)**
 
 The following stats were observed from AFL's corpus minimization tool (split set to accommodate space requirements in sort process):
 ```
 
 ```
 
+# Data Sets List
+
+http://www.netresec.com/?page=PcapFiles
 
 
