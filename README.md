@@ -1,12 +1,12 @@
 This repository contains unique packet samples which were narrowed down with help of TSHARK and AFL corpus minimization tool. These files can be used as seed input for fuzzing various packet parsing programs (tshark/wireshark etc). Overall 5731077 packets were reduced to 2749 unique samples. 
 
 There are two folders in this repository:
-- samples/  (folder with 5195 packets before final reduction)
-- samples-final/ (folder with 2749 packets after final reduction)
+- *samples/*  (folder with 5195 packets before final minimization)
+- *final-samples/* (folder with 2749 packets after final minimization)
 
 The samples were gathered as follows:
 
-* Download known samples from wireshark and other captures website (use similar commands for other repositories) and clean up any non pcap files:
+* Known samples from wireshark and other captures website were downloaded and cleaned up:
 ```
 1) Download wireshark samples
 wget --random-wait -e robots=off -nH -l 100000 -A pcap,cap,pcapng,cap.gz,pcap.gz,pcapng.gz -r --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0" https://wiki.wireshark.org/SampleCaptures
@@ -18,12 +18,12 @@ wget --random-wait -e robots=off -nH -A pcap,cap,pcapng -l 100000 -r --user-agen
 https://github.com/automayt/ICS-pcap
 ```
 
-* Split samples into single packet files
+* Sample PCAP files were split into individual packets
 ```
 for i in *; do editcap -c 1 $i split-input-clean/$ANDOM-$RANDOM-$RANDOM-; done
 ```
 
-* Use AFL to gather unique samples by minimizing the corpus down: 
+* AFL and tshark were used to minimize the corpus of individual packets: 
 ```
 /opt/afl-2.52b/afl-cmin -i split-input-clean/ -o uniq-output-packets/ -t 9000 -m 99999999999999999 ./tshark -nVxr @@
 ```
