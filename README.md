@@ -21,7 +21,7 @@ for i in *; do editcap -c 1 $i split-input-clean/$ANDOM-$RANDOM-$RANDOM-; done
 
 * Use AFL to gather unique samples by minimizing the corpus down: 
 ```
-/opt/afl-2.52b/afl-cmin -i input-caps/ -o split-input-clean/ -t 9000 -m 99999999999999999 ./tshark -nVxr @@
+/opt/afl-2.52b/afl-cmin -i split-input-clean/ -o uniq-output-packets/ -t 9000 -m 99999999999999999 ./tshark -nVxr @@
 ```
 
 * The following data sets were minimized using above method:
