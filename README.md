@@ -10,7 +10,7 @@ wget --random-wait -e robots=off -nH -l 100000 -A pcap,cap,pcapng,cap.gz,pcap.gz
 2) Download packetlife samples
 wget --random-wait -e robots=off -nH -A pcap,cap,pcapng -l 100000 -r --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:21.0) Gecko/20100101 Firefox/21.0" http://packetlife.net/captures/
 
-3) Download ICS-pcap samples  
+3) Download ICS-pcap samples 
 https://github.com/automayt/ICS-pcap
 ```
 
