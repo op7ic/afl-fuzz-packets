@@ -16,7 +16,7 @@ https://github.com/automayt/ICS-pcap
 
 * Split samples into single packet files
 ```
-for i in *; do editcap -c 1 $i split-input-clean/$(md5sum $f | cut -d " " -f 1); done
+for i in *; do editcap -c 1 $i split-input-clean/$ANDOM-$RANDOM-$RANDOM-; done
 ```
 
 * Use AFL to gather unique samples by minimizing the corpus down: 
@@ -75,11 +75,22 @@ The following stats were observed from AFL's corpus minimization tool:
 [+] Narrowed down to 447 files, saved in 'split-input-clean-packetlife/'.
 ```
 
-**Stats - ICS-pcap dumps (3417184 packets minimized to 1760 samples)**
+**Stats - ICS-pcap dumps (3417184 packets minimized to 1804 samples)**
 
-The following stats were observed from AFL's corpus minimization tool (split set to accommodate space requirements in sort process):
+The following stats were observed from AFL's corpus minimization tool (split set to accommodate space requirements in sort process so below is just a sample from one of the sets):
 ```
-
+[*] Testing the target binary...
+[+] OK, 13427 tuples recorded.
+[*] Obtaining traces for input files in '/opt/uniq-ics-1/'...
+    Processing file 227812/227812...
+[*] Sorting trace sets (this may take a while)...
+[+] Found 33739 unique tuples across 227812 files.
+[*] Finding best candidates for each tuple...
+    Processing file 227812/227812...
+[*] Sorting candidate list (be patient)...
+[*] Processing candidates and writing output files...
+    Processing tuple 33739/33739...
+[+] Narrowed down to 627 files, saved in '/opt/uniq-ics-output-1/'.
 ```
 
 # Data Sets List
